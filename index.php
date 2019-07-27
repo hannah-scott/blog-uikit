@@ -18,8 +18,6 @@
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/master.css">
         <title>Blog</title>
     </head>
 
