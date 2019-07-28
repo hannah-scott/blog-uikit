@@ -1,9 +1,11 @@
 # README
 
-Responsive blogging platform using [UIKit](https://getuikit.com/).
+A responsively-designed minimal blogging platform using [UIKit](https://getuikit.com/).
 
 ## Adding posts
 
-Post files should be put into assets/content as .php files.
+Post files should be put into assets/content as .php files. If posts are written in Markdown then you can paste Pandoc output directly into the file (see examples).
 
-If posts are written in Markdown then you can paste Pandoc output directly into the file (see example).
+## Content folders
+
+Currently the platform supports one layer of folders being created in assets/content.
