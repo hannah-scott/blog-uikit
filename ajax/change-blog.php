@@ -12,10 +12,11 @@
         $return=[];
         
         // Read in file name, filter for safety
-        $fname = Filter::String($_GET["fname"]);
+        $fname = Filter::String($_GET["fname"].$GLOBALS["fileext"]);
 
         // Open file, set div contents to file contents
         $file = fopen("../assets/content/$fname","r") or die("File does not exist.");
+
         $_SESSION['text'] = fread($file,filesize("../assets/content/$fname"));
         fclose($file);
 

@@ -2,12 +2,11 @@ $(document)
     .on("click",".nav-post", function(event){
 
     // Read in fname and append file type
-    _fname = $(this).text()+".php";
+    _fname = $(this).context.innerHTML;
+    console.log(_fname);
     
     // If a file was given, go get it
     if (_fname.length > 0) {
-        var _div = $(".blog-text");
-
         var data = {
             fname: _fname,
         };

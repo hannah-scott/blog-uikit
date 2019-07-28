@@ -17,5 +17,5 @@
 
     // Global Settings
     // Files
-    $GLOBALS["fileext"] = ".php"; // File extension of files in assets/content
+    $GLOBALS["fileext"] = ".html"; // File extension of files in assets/content
 ?>
