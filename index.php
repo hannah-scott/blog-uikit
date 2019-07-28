@@ -18,8 +18,6 @@
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/master.css">
         <title>Blog</title>
     </head>
 
@@ -36,16 +34,10 @@
                         <ul>
                             <?php 
                                 // Read in files in assets/content
-                                $path = "assets/content";
-                                $files = array_diff(scandir($path), array('.','..'));
-                                sort($files, SORT_NATURAL | SORT_FLAG_CASE);
+                                $path = "assets/content/";
+                                $files = getDirContents($path);
 
-                                for ($x = 0; $x < count($files); $x++) {
-                                    echo "<li>";
-                                        // Remove .php file extension
-                                        echo "<a class='nav-post'>".substr($files[$x],0,-4)."</a>";
-                                    echo "</li>";
-                                }
+                                echo listFiles($files);
                             ?>
                     </ul>
 

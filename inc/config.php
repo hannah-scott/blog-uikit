@@ -13,4 +13,10 @@
     // ini_set('display_errors','On');
 
     include_once "classes/Filter.php";
+    include_once "functions.php";
+
+    // Global Settings
+    // Navbar
+    $listFolders = true;
+    $listFoldersFirst = false;
 ?>
