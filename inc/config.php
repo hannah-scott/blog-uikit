@@ -16,7 +16,6 @@
     include_once "functions.php";
 
     // Global Settings
-    // Navbar
-    $listFolders = true;
-    $listFoldersFirst = false;
+    // Files
+    $GLOBALS["fileext"] = ".php"; // File extension of files in assets/content
 ?>

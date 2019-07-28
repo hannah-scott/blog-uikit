@@ -22,8 +22,8 @@
         $ds = [];
 
         for ($i=0; $i<count($l);$i++){
-            $ss = substr($l[$i],-4);
-            if ($ss == ".php"){
+            $ss = substr($l[$i],-strlen($GLOBALS["fileext"] ));
+            if ($ss == $GLOBALS["fileext"] ){
                 array_push($fs,$l[$i]);
             } else {
                 array_push($ds,$l[$i]);
@@ -34,15 +34,13 @@
         return $r;
     }
 
-    
-
     function listFiles($f) {
-    // Create listitems for all .php files passed
+    // Create listitems for all files passed
         $str = "";
         for ($x = 0; $x < count($f); $x++) {
             $str=$str."<li>".
-            // Remove .php file extension
-            "<a class='nav-post'>".substr($f[$x],0,-4)."</a>".
+            // Remove file extension
+            "<a class='nav-post'>".substr($f[$x],0,-strlen($GLOBALS["fileext"] ))."</a>".
             "</li>";
         }
         return $str;
