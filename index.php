@@ -35,9 +35,8 @@
                             <?php 
                                 // Read in files in assets/content
                                 $path = "assets/content/";
-                                $files = getDirContents($path);
 
-                                echo listFiles($files);
+                                echo createList($path);
                             ?>
                     </ul>
 

@@ -1,5 +1,4 @@
 <?php 
-
     function getDirContents($p) {
         // List directory contents
         $l = array_diff(scandir($p), array('.','..'));
@@ -15,9 +14,27 @@
         for ($i = 0; $i < count($l); $i++){
             array_push($f,$l[$i]);
         }
-
         return $f;
     }
+
+    function separateDirsAndFiles($l) {
+        $fs = [];
+        $ds = [];
+
+        for ($i=0; $i<count($l);$i++){
+            $ss = substr($l[$i],-4);
+            if ($ss == ".php"){
+                array_push($fs,$l[$i]);
+            } else {
+                array_push($ds,$l[$i]);
+            }
+        }
+
+        $r = array($ds,$fs);
+        return $r;
+    }
+
+    
 
     function listFiles($f) {
     // Create listitems for all .php files passed
@@ -30,6 +47,35 @@
         }
         return $str;
     } 
+
+    function createList($p) {
+        // Initialize return string
+        $r = "";
+
+        // Get array of dirs and files
+        $c = getDirContents($p);
+        $dfs = separateDirsAndFiles($c);
+        
+        // Split out
+        $ds = $dfs[0];
+        $fs = $dfs[1];
+
+        // If any dirs exist, list contents
+        if (count($ds) > 0){
+            for ($i=0;$i<count($ds);$i++){
+                $r=$r."<li>$ds[$i]<ul>";
+
+                $sfs = getDirContents($p."/".$ds[$i]);
+                $r =$r.listFiles($sfs);
+
+                $r = $r."</ul></li>";
+            }
+        }
+        // List file contents
+        $r=$r.listFiles($fs);
+
+        return $r;
+    }
 ?>
 
     
