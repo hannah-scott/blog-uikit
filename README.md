@@ -6,7 +6,7 @@ A responsively-designed minimal blogging platform using [UIKit](https://getuikit
 
 Post files should be put into assets/content as .html files. If posts are written in Markdown then you can output to HTML with Pandoc (see examples). 
 
-A good alternative to pandoc is to write in Markdown, upload .md files to assets/content and include [Parsedown](https://github.com/erusev/parsedown) on your server. File extension can be changed in inc/config.php.
+A good alternative to using pandoc is to write in Markdown, upload .md files to assets/content and include [Parsedown](https://github.com/erusev/parsedown) in your project. File extension can be changed in inc/config.php.
 
 ## Content folders
 
